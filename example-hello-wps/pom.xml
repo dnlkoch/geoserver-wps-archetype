@@ -1,6 +1,8 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-    http://maven.apache.org/maven-v4_0_0.xsd ">
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+  >
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.terrestris.geoserver.wps</groupId>
@@ -9,17 +11,40 @@
     <version>0.1-SNAPSHOT</version>
     <name>hello_wps</name>
 
+<!--
+  PROPERTIES
+
+  Various properties to be used in other sections used for easier changing of
+  versions mostly.
+-->
     <properties>
         <java.version>1.7</java.version>
-        <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
+        <!-- dependency versions -->
+        <!-- For GeoServer 2.6
         <geotools.version>12-SNAPSHOT</geotools.version>
         <geoserver.version>2.6.0</geoserver.version>
-        <junit.version>3.8.1</junit.version>
-        <mockrunner.version>0.3.1</mockrunner.version>
+        -->
+        <!-- For latest GeoServer development versions -->
+        <geotools.version>13-SNAPSHOT</geotools.version>
+        <geoserver.version>2.7-SNAPSHOT</geoserver.version>
+
+        <!-- dependency versions for tests -->
+        <junit.version>4.11</junit.version>
+
+        <!-- plugin versions -->
+        <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
+
+        <!-- various properties -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+<!--
+  DEPENDENCIES
+
+  The artifacts that this project depends upon.
+-->
     <dependencies>
+        <!-- Main dependencies -->
         <dependency>
             <groupId>org.geotools</groupId>
             <artifactId>gt-process</artifactId>
@@ -29,28 +54,26 @@
             <groupId>org.geoserver</groupId>
             <artifactId>gs-main</artifactId>
             <version>${geoserver.version}</version>
-            <!-- <classifier>test</classifier>
-            <scope>test</scope> -->
         </dependency>
         <dependency>
             <groupId>org.geoserver.extension</groupId>
             <artifactId>gs-wps-core</artifactId>
             <version>${geoserver.version}</version>
         </dependency>
+
+        <!-- Test dependencies -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
+	        <groupId>junit</groupId>
+	        <artifactId>junit</artifactId>
+	        <version>${junit.version}</version>
+	        <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.mockrunner</groupId>
-            <artifactId>mockrunner</artifactId>
-            <version>${mockrunner.version}</version>
-            <scope>test</scope>
-        </dependency>
+
     </dependencies>
 
+<!--
+  BUILD
+-->
     <build>
         <plugins>
             <plugin>
@@ -64,8 +87,13 @@
         </plugins>
     </build>
 
+<!--
+  REPOSITORIES
+
+  The repositories to fetch dependencies from.
+-->
     <repositories>
-        
+
         <repository>
             <id>boundless</id>
             <name>Boundless Maven Repository</name>
@@ -92,7 +120,7 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
-        
+
     </repositories>
 
 </project>
