@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 public class HelloWpsTest {
 
-    @Test
+	@Test
 	public void testHumpty() {
 		assertTrue(1l==1.0f);
 	}
