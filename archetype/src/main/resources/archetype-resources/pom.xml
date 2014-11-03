@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>${groupId}</groupId>
+    <artifactId>${artifactId}</artifactId>
+    <packaging>jar</packaging>
+    <version>${version}</version>
+    <name>hello_wps</name>
+
+    <issueManagement>
+        <url>https://github.com/marcjansen/geoserver-wps-archetype/issues</url>
+        <system>GitHub Issues</system>
+    </issueManagement>
+
+    <scm>
+        <url>https://github.com/marcjansen/geoserver-wps-archetype</url>
+        <connection>scm:git:git://github.com/marcjansen/geoserver-wps-archetype.git</connection>
+        <developerConnection>scm:git:git@github.com/marcjansen/geoserver-wps-archetype.git</developerConnection>
+    </scm>
+
+    <developers>
+        <developer>
+            <email>jansen@terrestris.de</email>
+            <name>Marc Jansen</name>
+            <url>https://github.com/marcjansen</url>
+            <id>marcjansen</id>
+        </developer>
+        <developer>
+            <email>buehner@terrestris.de</email>
+            <name>Nils Bühner</name>
+            <url>https://github.com/buehner</url>
+            <id>buehner</id>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+
+    <organization>
+        <name>terrestris GmbH &amp; Co. KG</name>
+        <url>http://www.terrestris.de</url>
+    </organization>
+
+<!--
+  PROPERTIES
+
+  Various properties to be used in other sections used for easier changing of
+  versions mostly.
+-->
+    <properties>
+        <java.version>1.7</java.version>
+        <!-- dependency versions -->
+        <!-- For GeoServer 2.6
+        <geotools.version>12-SNAPSHOT</geotools.version>
+        <geoserver.version>2.6.0</geoserver.version>
+        -->
+        <!-- For latest GeoServer development versions -->
+        <geotools.version>13-SNAPSHOT</geotools.version>
+        <geoserver.version>2.7-SNAPSHOT</geoserver.version>
+
+        <!-- dependency versions for tests -->
+        <junit.version>4.11</junit.version>
+
+        <!-- plugin versions -->
+        <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
+
+        <!-- various properties -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+<!--
+  DEPENDENCIES
+
+  The artifacts that this project depends upon.
+-->
+    <dependencies>
+        <!-- Main dependencies -->
+        <dependency>
+            <groupId>org.geotools</groupId>
+            <artifactId>gt-process</artifactId>
+            <version>${geotools.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.geoserver</groupId>
+            <artifactId>gs-main</artifactId>
+            <version>${geoserver.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.geoserver.extension</groupId>
+            <artifactId>gs-wps-core</artifactId>
+            <version>${geoserver.version}</version>
+        </dependency>
+
+        <!-- Test dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+<!--
+  BUILD
+-->
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+<!--
+  REPOSITORIES
+
+  The repositories to fetch dependencies from.
+-->
+    <repositories>
+
+        <repository>
+            <id>boundless</id>
+            <name>Boundless Maven Repository</name>
+            <url>http://repo.boundlessgeo.com/main</url>
+            <snapshots>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>osgeo</id>
+            <name>Open Source Geospatial Foundation Repository</name>
+            <url>http://download.osgeo.org/webdav/geotools/</url>
+            <snapshots>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>geosolutions</id>
+            <name>Geosolutions Maven Repo</name>
+            <url>http://maven.geo-solutions.it</url>
+            <snapshots>
+            </snapshots>
+        </repository>
+
+    </repositories>
+
+</project>
