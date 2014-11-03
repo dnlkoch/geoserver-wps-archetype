@@ -7,3 +7,5 @@ before_script:
   - cd example-hello-wps
 script:
   - mvn clean test
+  - cd ../archetype
+  - mvn clean install
