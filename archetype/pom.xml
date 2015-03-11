@@ -39,7 +39,7 @@
     <connection>scm:git:git://github.com/marcjansen/geoserver-wps-archetype.git</connection>
     <developerConnection>scm:git:git@github.com/marcjansen/geoserver-wps-archetype.git</developerConnection>
   </scm>
-  
+
   <issueManagement>
     <url>https://github.com/marcjansen/geoserver-wps-archetype/issues</url>
     <system>GitHub Issues</system>

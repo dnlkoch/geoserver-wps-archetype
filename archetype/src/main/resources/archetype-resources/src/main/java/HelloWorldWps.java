@@ -24,7 +24,18 @@ import org.geotools.process.factory.DescribeResult;
 
 import org.geoserver.wps.gs.GeoServerProcess;
 
-@DescribeProcess(title = "helloWorldWps", description = "Hello World WPS Example")
+/**
+ * 
+ * A simple hello world WPS example.
+ * 
+ * @author Marc Jansen
+ * @author Nils Bühner
+ *
+ */
+@DescribeProcess(
+	title = "helloWorldWps",
+	description = "Hello World WPS Example"
+)
 public class HelloWorldWps implements GeoServerProcess {
 
 	@DescribeResult(
