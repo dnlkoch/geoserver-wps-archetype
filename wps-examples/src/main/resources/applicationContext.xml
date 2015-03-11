@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="helloWorldWps" class="de.terrestris.geoserver.wps.example.HelloWorldWps"/>
+    <bean id="extendedHelloWorldWps" class="de.terrestris.geoserver.wps.example.ExtendedHelloWorldWps"/>
+</beans>
