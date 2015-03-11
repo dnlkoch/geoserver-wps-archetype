@@ -26,9 +26,13 @@
 
         <!-- plugin versions -->
         <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
+        <maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
 
         <!-- various properties -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <downloadSources>true</downloadSources>
+        <downloadJavadocs>false</downloadJavadocs>
     </properties>
 
 <!--
@@ -69,12 +73,25 @@
 -->
     <build>
         <plugins>
+            <!-- Maven Compiler Plugin -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+            <!-- Maven Eclipse Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>${maven-eclipse-plugin.version}</version>
+                <configuration>
+                    <downloadSources>${downloadSources}</downloadSources>
+                    <downloadJavadocs>${downloadJavadocs}</downloadJavadocs>
                 </configuration>
             </plugin>
         </plugins>
