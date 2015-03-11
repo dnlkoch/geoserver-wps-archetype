@@ -6,47 +6,7 @@
     <artifactId>${artifactId}</artifactId>
     <packaging>jar</packaging>
     <version>${version}</version>
-    <name>hello_wps</name>
-
-    <issueManagement>
-        <url>https://github.com/marcjansen/geoserver-wps-archetype/issues</url>
-        <system>GitHub Issues</system>
-    </issueManagement>
-
-    <scm>
-        <url>https://github.com/marcjansen/geoserver-wps-archetype</url>
-        <connection>scm:git:git://github.com/marcjansen/geoserver-wps-archetype.git</connection>
-        <developerConnection>scm:git:git@github.com/marcjansen/geoserver-wps-archetype.git</developerConnection>
-    </scm>
-
-    <developers>
-        <developer>
-            <email>jansen@terrestris.de</email>
-            <name>Marc Jansen</name>
-            <url>https://github.com/marcjansen</url>
-            <id>marcjansen</id>
-        </developer>
-        <developer>
-            <email>buehner@terrestris.de</email>
-            <name>Nils Bühner</name>
-            <url>https://github.com/buehner</url>
-            <id>buehner</id>
-        </developer>
-    </developers>
-
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-            <comments>A business-friendly OSS license</comments>
-        </license>
-    </licenses>
-
-    <organization>
-        <name>terrestris GmbH &amp; Co. KG</name>
-        <url>http://www.terrestris.de</url>
-    </organization>
+    <name>${wps-project-name}</name>
 
 <!--
   PROPERTIES
@@ -56,14 +16,10 @@
 -->
     <properties>
         <java.version>1.7</java.version>
-        <!-- dependency versions -->
-        <!-- For GeoServer 2.6
-        <geotools.version>12-SNAPSHOT</geotools.version>
-        <geoserver.version>2.6.0</geoserver.version>
-        -->
+
         <!-- For latest GeoServer development versions -->
-        <geotools.version>14-SNAPSHOT</geotools.version>
-        <geoserver.version>2.8-SNAPSHOT</geoserver.version>
+        <geotools.version>${geotools-version}</geotools.version>
+        <geoserver.version>${geoserver-version}</geoserver.version>
 
         <!-- dependency versions for tests -->
         <junit.version>4.12</junit.version>
