@@ -4,7 +4,7 @@ jdk:
   - oraclejdk7
   - openjdk7
 before_script:
-  - cd example-hello-wps
+  - cd wps-examples
 script:
   - mvn clean test
   - cd ../archetype
