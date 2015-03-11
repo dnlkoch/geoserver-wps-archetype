@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>de.terrestris.geoserver.wps</groupId>
-  <artifactId>hello_wps-archetype</artifactId>
+  <artifactId>geoserver-wps-archetype</artifactId>
   <version>0.1-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
 
-  <name>hello_wps-archetype</name>
+  <name>geoserver-wps-archetype</name>
 
   <build>
     <extensions>
