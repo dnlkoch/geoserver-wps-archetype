@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-/* Copyright 2014 terrestris GmbH & Co. KG
+/* Copyright 2015 terrestris GmbH & Co. KG
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,12 +24,29 @@ import org.geotools.process.factory.DescribeResult;
 
 import org.geoserver.wps.gs.GeoServerProcess;
 
-@DescribeProcess(title = "helloWPS", description = "Hello WPS Sample")
-public class HelloWps implements GeoServerProcess {
+/**
+ * 
+ * A simple hello world WPS example.
+ * 
+ * @author Marc Jansen
+ * @author Nils Bühner
+ *
+ */
+@DescribeProcess(
+	title = "helloWorldWps",
+	description = "Hello World WPS Example"
+)
+public class HelloWorldWps implements GeoServerProcess {
 
-	@DescribeResult(name = "result", description = "output result")
+	@DescribeResult(
+		name = "result",
+		description = "The Hello world string"
+	)
 	public String execute(
-			@DescribeParameter(name = "name", description = "name to return") String name) {
-		return "Hello, " + name;
+			@DescribeParameter(
+				name = "name",
+				description = "The name to use in the result"
+			) String name) {
+		return "Hello, " + name + "!";
 	}
 }

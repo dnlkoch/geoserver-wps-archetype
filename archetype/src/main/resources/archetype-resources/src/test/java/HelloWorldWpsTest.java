@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-/* Copyright 2014 terrestris GmbH & Co. KG
+/* Copyright 2015 terrestris GmbH & Co. KG
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,10 +22,10 @@ import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 
 
-public class HelloWpsTest {
+public class HelloWorldWpsTest {
 
 	@Test
-	public void testHumpty() {
+	public void testHelloWorldWps() {
 		assertTrue(1l==1.0f);
 	}
 }

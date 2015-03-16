@@ -1,55 +1,12 @@
-<project
-  xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
-  >
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.terrestris.geoserver.wps</groupId>
-    <artifactId>hello_wps</artifactId>
+    <artifactId>wps-examples</artifactId>
     <packaging>jar</packaging>
-    <version>0.1-SNAPSHOT</version>
-    <name>hello_wps</name>
-
-    <issueManagement>
-        <url>https://github.com/marcjansen/geoserver-wps-archetype/issues</url>
-        <system>GitHub Issues</system>
-    </issueManagement>
-
-    <scm>
-        <url>https://github.com/marcjansen/geoserver-wps-archetype</url>
-        <connection>scm:git:git://github.com/marcjansen/geoserver-wps-archetype.git</connection>
-        <developerConnection>scm:git:git@github.com/marcjansen/geoserver-wps-archetype.git</developerConnection>
-    </scm>
-
-    <developers>
-        <developer>
-            <email>jansen@terrestris.de</email>
-            <name>Marc Jansen</name>
-            <url>https://github.com/marcjansen</url>
-            <id>marcjansen</id>
-        </developer>
-        <developer>
-            <email>buehner@terrestris.de</email>
-            <name>Nils Bühner</name>
-            <url>https://github.com/buehner</url>
-            <id>buehner</id>
-        </developer>
-    </developers>
-
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-            <comments>A business-friendly OSS license</comments>
-        </license>
-    </licenses>
-
-    <organization>
-        <name>terrestris GmbH &amp; Co. KG</name>
-        <url>http://www.terrestris.de</url>
-    </organization>
+    <version>1.0-SNAPSHOT</version>
+    <name>Some WPS Project</name>
 
 <!--
   PROPERTIES
@@ -59,23 +16,23 @@
 -->
     <properties>
         <java.version>1.7</java.version>
-        <!-- dependency versions -->
-        <!-- For GeoServer 2.6
-        <geotools.version>12-SNAPSHOT</geotools.version>
-        <geoserver.version>2.6.0</geoserver.version>
-        -->
+
         <!-- For latest GeoServer development versions -->
-        <geotools.version>13-SNAPSHOT</geotools.version>
-        <geoserver.version>2.7-SNAPSHOT</geoserver.version>
+        <geotools.version>12.2</geotools.version>
+        <geoserver.version>2.6.2</geoserver.version>
 
         <!-- dependency versions for tests -->
-        <junit.version>4.11</junit.version>
+        <junit.version>4.12</junit.version>
 
         <!-- plugin versions -->
         <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
+        <maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
 
         <!-- various properties -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <downloadSources>true</downloadSources>
+        <downloadJavadocs>false</downloadJavadocs>
     </properties>
 
 <!--
@@ -116,12 +73,25 @@
 -->
     <build>
         <plugins>
+            <!-- Maven Compiler Plugin -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+            <!-- Maven Eclipse Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>${maven-eclipse-plugin.version}</version>
+                <configuration>
+                    <downloadSources>${downloadSources}</downloadSources>
+                    <downloadJavadocs>${downloadJavadocs}</downloadJavadocs>
                 </configuration>
             </plugin>
         </plugins>
@@ -139,7 +109,6 @@
             <name>Boundless Maven Repository</name>
             <url>http://repo.boundlessgeo.com/main</url>
             <snapshots>
-                <enabled>true</enabled>
             </snapshots>
         </repository>
 
@@ -148,7 +117,6 @@
             <name>Open Source Geospatial Foundation Repository</name>
             <url>http://download.osgeo.org/webdav/geotools/</url>
             <snapshots>
-                <enabled>true</enabled>
             </snapshots>
         </repository>
 
@@ -157,10 +125,18 @@
             <name>Geosolutions Maven Repo</name>
             <url>http://maven.geo-solutions.it</url>
             <snapshots>
-                <enabled>true</enabled>
             </snapshots>
         </repository>
 
     </repositories>
+
+    <licenses>
+      <license>
+        <name>Apache License, Version 2.0</name>
+        <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        <distribution>repo</distribution>
+        <comments>A business-friendly OSS license</comments>
+      </license>
+    </licenses>
 
 </project>
