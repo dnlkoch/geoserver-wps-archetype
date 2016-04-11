@@ -25,8 +25,8 @@
         <junit.version>4.12</junit.version>
 
         <!-- plugin versions -->
-        <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
-        <maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
+        <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
+        <maven-eclipse-plugin.version>2.10</maven-eclipse-plugin.version>
 
         <!-- various properties -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
