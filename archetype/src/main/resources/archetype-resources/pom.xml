@@ -25,8 +25,9 @@
         <junit.version>4.12</junit.version>
 
         <!-- plugin versions -->
-        <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
         <maven-eclipse-plugin.version>2.10</maven-eclipse-plugin.version>
+        <maven-assembly-plugin.version>3.0.0</maven-assembly-plugin.version>
 
         <!-- various properties -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -46,16 +47,19 @@
             <groupId>org.geotools</groupId>
             <artifactId>gt-process</artifactId>
             <version>${geotools.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.geoserver</groupId>
             <artifactId>gs-main</artifactId>
             <version>${geoserver.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.geoserver.extension</groupId>
             <artifactId>gs-wps-core</artifactId>
             <version>${geoserver.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Test dependencies -->
@@ -93,6 +97,45 @@
                     <downloadSources>${downloadSources}</downloadSources>
                     <downloadJavadocs>${downloadJavadocs}</downloadJavadocs>
                 </configuration>
+            </plugin>
+
+            <!-- inspired by http://stackoverflow.com/a/8045334 -->
+            <!-- We need this to have the Jackson-Dependency in the JAR -->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>${maven-assembly-plugin.version}</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <attach>false</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Disable the default JAR building as we use the assembly plugin -->
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>default-jar</id>
+                        <phase>never</phase>
+                        <configuration>
+                            <finalName>unwanted</finalName>
+                            <classifier>unwanted</classifier>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
