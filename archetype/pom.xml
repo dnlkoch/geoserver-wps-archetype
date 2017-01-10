@@ -27,6 +27,12 @@
       <email>buehner@terrestris.de</email>
       <url>https://github.com/buehner</url>
     </developer>
+    <developer>
+      <id>dnlkoch</id>
+      <name>Daniel Koch</name>
+      <email>koch@terrestris.de</email>
+      <url>https://github.com/dnlkoch</url>
+    </developer>
   </developers>
 
   <organization>
