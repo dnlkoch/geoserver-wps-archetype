@@ -109,7 +109,7 @@
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
                     <appendAssemblyId>false</appendAssemblyId>
-                    <attach>false</attach>
+                    <attach>true</attach>
                 </configuration>
                 <executions>
                     <execution>
