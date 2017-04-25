@@ -1,6 +1,6 @@
 # geoserver-wps-archetype
 
-A Maven archetype for implementing custom WPS-processes for GeoServer (see 
+A Maven archetype for implementing custom WPS-processes for GeoServer (see
 http://docs.geoserver.org/stable/en/developer/programming-guide/wps-services/index.html).
 
 [![Build Status](https://travis-ci.org/marcjansen/geoserver-wps-archetype.png)](https://travis-ci.org/marcjansen/geoserver-wps-archetype)
@@ -31,7 +31,8 @@ Use the archetype to create your WPS project in interactive mode:
 ```
 mvn archetype:generate \
 -DarchetypeGroupId=de.terrestris.geoserver.wps \
--DarchetypeArtifactId=geoserver-wps-archetype
+-DarchetypeArtifactId=geoserver-wps-archetype \
+-DarchetypeVersion=0.1-SNAPSHOT
 ```
 
 You will have to enter a `groupId`, `artifactId`, `version` and a (Java-)`package` for your Maven-Geoserver-WPS-project. You also have to provide a `geoserver-version`, `geotools-version` and `wps-project-name` that will also be used in `pom.xml` of the WPS project you are about to create.
@@ -44,6 +45,7 @@ If you want to speed up this process, use something like this:
 mvn archetype:generate \
 -DarchetypeGroupId=de.terrestris.geoserver.wps \
 -DarchetypeArtifactId=geoserver-wps-archetype \
+-DarchetypeVersion=0.1-SNAPSHOT \
 -DgroupId=de.terrestris.geoserver.wps \
 -DartifactId=wps-examples \
 -Dversion=1.0-SNAPSHOT \
